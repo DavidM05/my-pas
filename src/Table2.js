@@ -36,9 +36,17 @@ export const Table=()=>{
                 {
                     icon: 'delete',
                     tooltip: 'Eliminar',
-                    onClick:(event, rowData)=>alert('Eliminar: '+rowData.name)
+                    onClick:(event, rowData)=>window.confirm('Eliminar: '+rowData.name+'?')
                 }
             ]}
+            options={{
+                actionsColumnIndex:-1
+            }}
+            localization={{
+                header:{
+                    actions: 'Acciones'
+                }
+            }}
             />
         </div>
     )
