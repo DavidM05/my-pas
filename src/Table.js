@@ -17,9 +17,29 @@ export const Table=()=>{
     ]
     return(
         <div>
-            <MateriaTable title="ESe Carmen Emilia Ospina"
+            <MateriaTable title="ESE Carmen Emilia Ospina"
             data={data}
             columns={columns}
+            actions={[
+                {
+                    icon: 'edit',
+                    tooltip: 'Editar Usuario',
+                    onClick:(event, rowData)=>alert('Editar: '+rowData.name)
+                },
+                {
+                    icon: 'delete',
+                    tooltip: 'Eliminar',
+                    onClick:(event, rowData)=>window.confirm('Eliminar: '+rowData.name+'?')
+                }
+            ]}
+            options={{
+                actionsColumnIndex:-1
+            }}
+            localization={{
+                header:{
+                    actions: 'Acciones'
+                }
+            }}
             />
         </div>
     )
